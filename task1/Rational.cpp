@@ -154,7 +154,7 @@ std::ostream & operator << (std::ostream &stream, const CRational &num)
 
 std::istream & operator>>(std::istream & stream, CRational & rational)
 {
-	std::streamoff pos = stream.tellg();
+	std::streamoff pos = stream.tellg();//вперед
 
 	int numerator = 0;
 	int denominator = 0;
@@ -164,7 +164,7 @@ std::istream & operator>>(std::istream & stream, CRational & rational)
 		return stream;
 	}
 
-	stream.seekg(pos);
+	stream.seekg(pos);//смещение 
 	stream.setstate(std::ios_base::failbit | stream.rdstate());
 	return stream;
 }
